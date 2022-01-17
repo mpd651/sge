@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 print('Introduce un numero de mes (entre 1 y 12): ')
 mes=int(input())
 

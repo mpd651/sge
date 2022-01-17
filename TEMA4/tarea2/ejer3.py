@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 print('Introduce un año:')
 anio=int(input())
 
