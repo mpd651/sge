@@ -12,8 +12,11 @@ print(f'la palabra {cadena} aparece {lista.count(cadena)} veces')
 
 print('Escribe algo para sustituir en la lista')
 sustituidor=input()
-lista[lista.index(cadena)]=sustituidor
-print(lista[lista.index(sustituidor)])
+
+for i in range(lista.count(cadena)):
+    lista[lista.index(cadena)]=sustituidor
+
+print(lista)
 
 
 
