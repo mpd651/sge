@@ -3,6 +3,9 @@ cadena=list(input())
 print('Introduce un caracter')
 caracter=input()
 
+nueva=caracter.join(cadena)
+
+
 
 cadenaSeparador=""
 contador=0
