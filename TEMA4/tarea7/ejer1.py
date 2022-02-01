@@ -15,14 +15,18 @@ def funcionLeerEscribir (ficheroNombre):
         print (contenido)
     fichero.closed
 
-print('Introduce un nombre de fichero: ')
-ficheroNombre=input()
-if os.path.exists(ficheroNombre):
-    funcionLeerEscribir (ficheroNombre)
+if __name__=="__main__":
+    print('Introduce un nombre de fichero: ')
+    ficheroNombre=input()
+    if os.path.exists(ficheroNombre):
+        funcionLeerEscribir (ficheroNombre)
 
-else:
-    print('El fichero no existe')
-    funcionLeerEscribir (ficheroNombre)
+    else:
+        print('El fichero no existe')
+        funcionLeerEscribir (ficheroNombre)
+
+
+
 
 
 
