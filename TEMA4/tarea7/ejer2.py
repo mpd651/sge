@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 
 
 print('MENU:')
@@ -38,37 +39,45 @@ while opcion!=0:
     if opcion==4:
         print('Introduce nombre del fichero a guardar CSV:')
         nombre=input()
-        fichero=open(nombre+'.csv')
+        fichero=open(nombre+'.csv', 'w')
         contenido=csv.writer(fichero)
         contenido.writerows(contactos)
         fichero.close()
+        print('fichero guardado')
 
     if opcion==5:
         print('Introduce nombre del fichero a guardar JSON:')
         nombre=input()
-        fichero=open(nombre+'.json')
+        fichero=open(nombre+'.json', 'w')
         json.dump(contactos,fichero)
         fichero.close()
+        print('fichero guardado')
 
     if opcion==6:
         print('Introduce nombre del fichero a leer CSV:')
         nombre=input()
-        fichero=open(nombre+'.csv')
-        contenido=csv.reader(fichero)
-        list(contenido)
-        for fila in contenido:
-            print ('Fila '+str(contenido.line_num)+' '+str(fila))
-        fichero.close()
+        
+        if os.path.exists(nombre+'.csv'):
+            fichero=open(nombre+'.csv')
+            contenido=csv.reader(fichero)
+            listaContenido=list(contenido)
+            for fila in listaContenido:
+                print (str(fila))
+            fichero.close()
+        else:
+            print('El fichero no existe')
 
     if opcion==7:
         print('Introduce nombre del fichero a leer JSON:')
         nombre=input()
-        fichero=open(nombre+'.csv')
-        datos=json.loads(fichero)
-        datos
-        for i in datos:
-            print (i)
-        fichero.close()
+        if os.path.exists(nombre+'.json'):
+            with open(nombre+'.json') as fichero:
+                datos=json.load(fichero)
+            for i in datos:
+                print (i)
+            fichero.close()
+        else:
+            print('El fichero no existe')
         
     
     print('MENU:')
