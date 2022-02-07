@@ -1,7 +1,10 @@
+#which python3
+#/usr/bin/python3
+
 class Persona():
-    def __init__(self):
-        _nombre=''
-        _edad=0
+    def __init__(self, nombre, edad):
+        self._nombre=nombre
+        self._edad=edad
 
     @property
     def nombre(self):
