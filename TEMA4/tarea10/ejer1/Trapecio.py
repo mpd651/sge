@@ -1,4 +1,7 @@
-from ejer1.Figura import Figura
+
+
+
+from Figura import Figura
 
 
 class Trapecio(Figura):
@@ -8,3 +11,6 @@ class Trapecio(Figura):
 
     def area(self):
         return (self._base+self._base2)/2*self._altura
+
+    def info_figura (self):
+        print(f'Base: {self.base}, Base2: {self._base2}, Altura: {self.altura}, Area: {self.area()}')

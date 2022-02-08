@@ -1,4 +1,7 @@
-from ejer1.Figura import Figura
+
+
+
+from Figura import Figura
 
 
 class Triangulo(Figura):
@@ -7,5 +10,8 @@ class Triangulo(Figura):
     
     def area(self):
         return self._base*self._altura/2
+
+    def info_figura (self):
+        print(f'Base: {self.base}, Altura: {self.altura}, Area: {self.area()}')
     
     

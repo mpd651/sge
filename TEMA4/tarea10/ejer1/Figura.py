@@ -22,7 +22,7 @@ class Figura():
     def area(self):
         return self.base*self.altura
 
-    def ifo_figura (self):
+    def info_figura (self):
         print(f'Base: {self.base}, Altura: {self.altura}, Area: {self.area}')
         
     
