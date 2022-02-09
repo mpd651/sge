@@ -2,12 +2,12 @@ from unicodedata import digit
 
 
 print('Introduce una cadena')
-cadena=list(input())
+cadena=input()
 
 print('Introduce un caracter')
 caracter=input()
 
-for i in range (len(cadena)):
-    cadena=cadena.replace(cadena[i], caracter)
+for i in range (0, 10):
+    cadena=cadena.replace(str(i), caracter)
 
 print(cadena)

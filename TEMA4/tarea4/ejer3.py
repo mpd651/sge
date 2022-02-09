@@ -1,4 +1,4 @@
-lista = ['hola', 'que', 'tal']
+lista = ['hola', 'hola', 'que', 'tal']
 
 print('Escribe algo que este en la lista')
 cadena=input()
@@ -15,6 +15,11 @@ sustituidor=input()
 
 for i in range(lista.count(cadena)):
     lista[lista.index(cadena)]=sustituidor
+
+#for i in lista:
+#    if i==cadena:
+#        lista[lista.index(cadena)]=sustituidor
+
 
 print(lista)
 

@@ -7,4 +7,6 @@ for i in range (1900, 2200):
 
 numero= int(input('\n Introduce un año: '))
 if numero in lista:
-    print(f'')
+    print(f'el año {numero} es bisiesto')
+else:
+    print('No es bisiesto')

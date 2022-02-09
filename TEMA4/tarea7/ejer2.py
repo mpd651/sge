@@ -5,8 +5,8 @@ import os
 
 print('MENU:')
 print('1 Listar datos\n2 Crear contacto\n3 Borrar contacto\n4 Guardar CSV\n5 Guardar JSON\n6 Cargar CSV\n7 Cargar JSON\n 0 Salir')
-opcion=int(input())
-contactos=list()
+opcion=int(input('Introduce una opcion'))
+contactos=[]
 
 while opcion!=0:
     if opcion==1:
@@ -39,10 +39,9 @@ while opcion!=0:
     if opcion==4:
         print('Introduce nombre del fichero a guardar CSV:')
         nombre=input()
-        fichero=open(nombre+'.csv', 'w')
-        contenido=csv.writer(fichero)
-        contenido.writerows(contactos)
-        fichero.close()
+        with open (nombre+'.csv', 'w') as fichero:
+            escritor=csv.writer(fichero)
+            escritor.writerows(contactos)
         print('fichero guardado')
 
     if opcion==5:
@@ -58,12 +57,11 @@ while opcion!=0:
         nombre=input()
         
         if os.path.exists(nombre+'.csv'):
-            fichero=open(nombre+'.csv')
-            contenido=csv.reader(fichero)
-            listaContenido=list(contenido)
-            for fila in listaContenido:
-                print (str(fila))
-            fichero.close()
+            with open (nombre+'.csv') as fichero:
+                lector=csv.reader(fichero)
+                listaContenido=list(lector)
+                for fila in listaContenido:
+                    print (str(fila))
         else:
             print('El fichero no existe')
 
@@ -75,7 +73,6 @@ while opcion!=0:
                 datos=json.load(fichero)
             for i in datos:
                 print (i)
-            fichero.close()
         else:
             print('El fichero no existe')
         

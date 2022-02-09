@@ -4,6 +4,7 @@ print('Introduce un caracter')
 caracter=input()
 
 nueva=caracter.join(cadena)
+print(nueva)
 
 
 

@@ -45,30 +45,30 @@ class agenda():
 
     def listaContactos(self):
         for obj in self._contactos:
-            print(f'Nombre: {obj.nombre()}, telefono: {obj.telefono()}, email: {obj.email()}')
+            print(f'Nombre: {obj.nombre}, telefono: {obj.telefono}, email: {obj.email}')
 
     def buscarContacto(self, nombre):
         for c in self._contactos:
-            if c.nombre() == nombre:
-                print(f'Contacto encontrado, nombre: {c.nombre()}, posicion en la lista {self._contactos.index(contacto)}')
+            if c.nombre == nombre:
+                print(f'Contacto encontrado, nombre: {c.nombre}, posicion en la lista {self._contactos.index(c)}')
 
     def editarContacto(self, nombre):
         for c in self._contactos:
-            if c.nombre()==nombre:
+            if c.nombre==nombre:
                 print('1-editar nombre\n 2-editar telefono\n 3-editar email\n')
                 opcion=int(input('Introduce una opcion:'))
                 
                 if opcion==1:
-                    nombre=input('Introduce un nombre:')
-                    c.nombre(nombre)
+                    nom=input('Introduce un nombre:')
+                    c.nombre=nom
 
                 elif opcion==2:
                     telefono=int(input('Introduce un telefono:'))
-                    c.telefono(telefono)
+                    c.telefono=telefono
 
                 elif opcion==3:
                     email=input('Introduce un email:')
-                    c.email(email)
+                    c.email=email
 
     def menuAgenda(self):
         print('Menu:')
@@ -89,7 +89,7 @@ class agenda():
 
             elif opcion==4:
                 nombre=input('Introduce un nombre')
-                self.editarContacto()
+                self.editarContacto(nombre)
 
             print('Menu:')
             print('1-Anadir Contacto\n 2-Lista de contactos\n 3-Buscar contacto\n 4-Editar contacto\n 0-Salir')
